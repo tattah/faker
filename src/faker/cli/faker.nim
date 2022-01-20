@@ -14,13 +14,13 @@ Examples:
     $ LANG=en_US.UTF-8 faker person
     $ LANG=ja_JP.UTF-8 faker person
 
-Avairable subcommand:
+Available subcommand:
     address
     phone_number, phoneNumber
     job
     name
 
-Avairable locale:
+Available locale:
     en_US
     ja_JP
 
