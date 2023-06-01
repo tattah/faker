@@ -19,6 +19,8 @@ Available subcommand:
     phone_number, phoneNumber
     job
     name
+    user_agent, userAgent
+    ssn
 
 Available locale:
     en_US
@@ -43,6 +45,7 @@ proc main(args: seq[string]): int =
   of "job": echo fake.job()
   of "name": echo fake.name()
   of "user_agent", "userAgent": echo fake.userAgent()
+  of "ssn": echo fake.ssn()
   of "-h", "--help": echo usage
   else:
     stderr.writeLine subcmd & " is not supported."
