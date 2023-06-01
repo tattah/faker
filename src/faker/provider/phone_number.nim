@@ -4,6 +4,7 @@
 # ----------------------------------------------- #
 
 import ../base
+import phone_number/phone_number_en_GH
 import phone_number/phone_number_en_US
 import phone_number/phone_number_fa_IR
 import phone_number/phone_number_ja_JP
@@ -16,6 +17,7 @@ proc phoneNumber*(f: Faker): string =
     echo f.phoneNumber()
 
   case f.locale
+  of "en_GH": phone_number_en_GH.phoneNumber(f)
   of "en_US": phone_number_en_US.phoneNumber(f)
   of "fa_IR": phone_number_fa_IR.phoneNumber(f)
   of "ja_JP": phone_number_ja_JP.phoneNumber(f)
@@ -28,6 +30,7 @@ proc msisdn*(f: Faker): string =
     echo f.msisdn()
 
   case f.locale
+  of "en_GH": phone_number_en_GH.msisdn(f)
   of "en_US": phone_number_en_US.msisdn(f)
   of "fa_IR": phone_number_fa_IR.msisdn(f)
   of "ja_JP": phone_number_ja_JP.msisdn(f)

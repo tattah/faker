@@ -4,6 +4,7 @@
 # ----------------------------------------------- #
 
 import ../base
+import automotive/automotive_en_GH
 import automotive/automotive_en_US
 export base
 
@@ -14,5 +15,6 @@ proc licensePlate*(f: Faker): string =
     echo f.licensePlate()
 
   case f.locale
+  of "en_GH": automotive_en_GH.licensePlate(f)
   of "en_US": automotive_en_US.licensePlate(f)
   else: automotive_en_US.licensePlate(f)

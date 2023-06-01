@@ -4,6 +4,7 @@
 # ----------------------------------------------- #
 
 import ../base
+import internet/internet_en_GH
 import internet/internet_en_US
 import internet/internet_fa_IR
 import internet/internet_ja_JP
@@ -16,6 +17,7 @@ proc safeDomainName*(f: Faker): string =
     echo f.safeDomainName()
 
   case f.locale
+  of "en_GH": internet_en_GH.safeDomainName(f)
   of "en_US": internet_en_US.safeDomainName(f)
   of "fa_IR": internet_fa_IR.safeDomainName(f)
   of "ja_JP": internet_ja_JP.safeDomainName(f)
@@ -28,6 +30,7 @@ proc freeDomainName*(f: Faker): string =
     echo f.freeDomainName()
 
   case f.locale
+  of "en_GH": internet_en_GH.freeDomainName(f)
   of "en_US": internet_en_US.freeDomainName(f)
   of "fa_IR": internet_fa_IR.freeDomainName(f)
   of "ja_JP": internet_ja_JP.freeDomainName(f)
@@ -40,6 +43,7 @@ proc topLevelDomain*(f: Faker): string =
     echo f.topLevelDomain()
 
   case f.locale
+  of "en_GH": internet_en_GH.topLevelDomain(f)
   of "en_US": internet_en_US.topLevelDomain(f)
   of "fa_IR": internet_fa_IR.topLevelDomain(f)
   of "ja_JP": internet_ja_JP.topLevelDomain(f)
@@ -52,6 +56,7 @@ proc safeEmail*(f: Faker): string =
     echo f.safeEmail()
 
   case f.locale
+  of "en_GH": internet_en_GH.safeEmail(f)
   of "en_US": internet_en_US.safeEmail(f)
   of "fa_IR": internet_fa_IR.safeEmail(f)
   of "ja_JP": internet_ja_JP.safeEmail(f)
@@ -64,6 +69,7 @@ proc freeEmail*(f: Faker): string =
     echo f.freeEmail()
 
   case f.locale
+  of "en_GH": internet_en_GH.freeEmail(f)
   of "en_US": internet_en_US.freeEmail(f)
   of "fa_IR": internet_fa_IR.freeEmail(f)
   of "ja_JP": internet_ja_JP.freeEmail(f)
@@ -76,6 +82,7 @@ proc email*(f: Faker): string =
     echo f.email()
 
   case f.locale
+  of "en_GH": internet_en_GH.email(f)
   of "en_US": internet_en_US.email(f)
   of "fa_IR": internet_fa_IR.email(f)
   of "ja_JP": internet_ja_JP.email(f)

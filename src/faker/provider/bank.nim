@@ -4,6 +4,7 @@
 # ----------------------------------------------- #
 
 import ../base
+import bank/bank_en_GH
 import bank/bank_en_US
 export base
 
@@ -14,6 +15,7 @@ proc bankCountry*(f: Faker): string =
     echo f.bankCountry()
 
   case f.locale
+  of "en_GH": bank_en_GH.bankCountry(f)
   of "en_US": bank_en_US.bankCountry(f)
   else: bank_en_US.bankCountry(f)
 
@@ -24,6 +26,7 @@ proc bban*(f: Faker): string =
     echo f.bban()
 
   case f.locale
+  of "en_GH": bank_en_GH.bban(f)
   of "en_US": bank_en_US.bban(f)
   else: bank_en_US.bban(f)
 
@@ -34,5 +37,6 @@ proc iban*(f: Faker): string =
     echo f.iban()
 
   case f.locale
+  of "en_GH": bank_en_GH.iban(f)
   of "en_US": bank_en_US.iban(f)
   else: bank_en_US.iban(f)

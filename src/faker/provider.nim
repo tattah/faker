@@ -16,8 +16,8 @@ import provider/lorem
 import provider/misc
 import provider/person
 import provider/phone_number
-import provider/user_agent
 import provider/ssn
+import provider/user_agent
 
 export address
 export automotive
@@ -32,5 +32,5 @@ export lorem
 export misc
 export person
 export phone_number
-export user_agent
 export ssn
+export user_agent

@@ -8,7 +8,7 @@ import ssn/ssn_en_US
 export base
 
 proc ssn*(f: Faker): string =
-  ## Generates random job.
+  ## Generates random ssn.
   runnableExamples:
     let f = newFaker()
     echo f.ssn()

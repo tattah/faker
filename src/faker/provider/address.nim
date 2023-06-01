@@ -4,6 +4,7 @@
 # ----------------------------------------------- #
 
 import ../base
+import address/address_en_GH
 import address/address_en_US
 import address/address_fa_IR
 import address/address_ja_JP
@@ -16,6 +17,7 @@ proc address*(f: Faker): string =
     echo f.address()
 
   case f.locale
+  of "en_GH": address_en_GH.address(f)
   of "en_US": address_en_US.address(f)
   of "fa_IR": address_fa_IR.address(f)
   of "ja_JP": address_ja_JP.address(f)
@@ -28,6 +30,7 @@ proc buildingNumber*(f: Faker): string =
     echo f.buildingNumber()
 
   case f.locale
+  of "en_GH": address_en_GH.buildingNumber(f)
   of "en_US": address_en_US.buildingNumber(f)
   of "fa_IR": address_fa_IR.buildingNumber(f)
   of "ja_JP": address_ja_JP.buildingNumber(f)
@@ -40,6 +43,7 @@ proc city*(f: Faker): string =
     echo f.city()
 
   case f.locale
+  of "en_GH": address_en_GH.city(f)
   of "en_US": address_en_US.city(f)
   of "fa_IR": address_fa_IR.city(f)
   of "ja_JP": address_ja_JP.city(f)
@@ -52,6 +56,7 @@ proc cityPrefix*(f: Faker): string =
     echo f.cityPrefix()
 
   case f.locale
+  of "en_GH": address_en_GH.cityPrefix(f)
   of "en_US": address_en_US.cityPrefix(f)
   of "fa_IR": address_fa_IR.cityPrefix(f)
   of "ja_JP": address_ja_JP.cityPrefix(f)
@@ -64,6 +69,7 @@ proc citySuffix*(f: Faker): string =
     echo f.citySuffix()
 
   case f.locale
+  of "en_GH": address_en_GH.citySuffix(f)
   of "en_US": address_en_US.citySuffix(f)
   of "fa_IR": address_fa_IR.citySuffix(f)
   of "ja_JP": address_ja_JP.citySuffix(f)
@@ -76,10 +82,24 @@ proc country*(f: Faker): string =
     echo f.country()
 
   case f.locale
+  of "en_GH": address_en_GH.country(f)
   of "en_US": address_en_US.country(f)
   of "fa_IR": address_fa_IR.country(f)
   of "ja_JP": address_ja_JP.country(f)
   else: address_en_US.country(f)
+
+proc countryCode*(f: Faker, representation: string): string =
+  ## Generates random countryCode.
+  runnableExamples:
+    let f = newFaker()
+    echo f.countryCode(representation: string)
+
+  case f.locale
+  of "en_GH": address_en_GH.countryCode(f, representation)
+  of "en_US": address_en_US.countryCode(f, representation)
+  of "fa_IR": address_fa_IR.countryCode(f, representation)
+  of "ja_JP": address_ja_JP.countryCode(f, representation)
+  else: address_en_US.countryCode(f, representation)
 
 proc militaryApo*(f: Faker): string =
   ## Generates random militaryApo.
@@ -88,6 +108,7 @@ proc militaryApo*(f: Faker): string =
     echo f.militaryApo()
 
   case f.locale
+  of "en_GH": address_en_GH.militaryApo(f)
   of "en_US": address_en_US.militaryApo(f)
   of "fa_IR": address_fa_IR.militaryApo(f)
   of "ja_JP": address_ja_JP.militaryApo(f)
@@ -100,6 +121,7 @@ proc militaryDpo*(f: Faker): string =
     echo f.militaryDpo()
 
   case f.locale
+  of "en_GH": address_en_GH.militaryDpo(f)
   of "en_US": address_en_US.militaryDpo(f)
   of "fa_IR": address_fa_IR.militaryDpo(f)
   of "ja_JP": address_ja_JP.militaryDpo(f)
@@ -112,6 +134,7 @@ proc militaryShip*(f: Faker): string =
     echo f.militaryShip()
 
   case f.locale
+  of "en_GH": address_en_GH.militaryShip(f)
   of "en_US": address_en_US.militaryShip(f)
   of "fa_IR": address_fa_IR.militaryShip(f)
   of "ja_JP": address_ja_JP.militaryShip(f)
@@ -124,6 +147,7 @@ proc militaryState*(f: Faker): string =
     echo f.militaryState()
 
   case f.locale
+  of "en_GH": address_en_GH.militaryState(f)
   of "en_US": address_en_US.militaryState(f)
   of "fa_IR": address_fa_IR.militaryState(f)
   of "ja_JP": address_ja_JP.militaryState(f)
@@ -136,10 +160,24 @@ proc postalcode*(f: Faker): string =
     echo f.postalcode()
 
   case f.locale
+  of "en_GH": address_en_GH.postalcode(f)
   of "en_US": address_en_US.postalcode(f)
   of "fa_IR": address_fa_IR.postalcode(f)
   of "ja_JP": address_ja_JP.postalcode(f)
   else: address_en_US.postalcode(f)
+
+proc postalcodeInState*(f: Faker, stateAbbr: string): string =
+  ## Generates random postalcodeInState.
+  runnableExamples:
+    let f = newFaker()
+    echo f.postalcodeInState(stateAbbr: string)
+
+  case f.locale
+  of "en_GH": address_en_GH.postalcodeInState(f, stateAbbr)
+  of "en_US": address_en_US.postalcodeInState(f, stateAbbr)
+  of "fa_IR": address_fa_IR.postalcodeInState(f, stateAbbr)
+  of "ja_JP": address_ja_JP.postalcodeInState(f, stateAbbr)
+  else: address_en_US.postalcodeInState(f, stateAbbr)
 
 proc postalcodePlus4*(f: Faker): string =
   ## Generates random postalcodePlus4.
@@ -148,6 +186,7 @@ proc postalcodePlus4*(f: Faker): string =
     echo f.postalcodePlus4()
 
   case f.locale
+  of "en_GH": address_en_GH.postalcodePlus4(f)
   of "en_US": address_en_US.postalcodePlus4(f)
   of "fa_IR": address_fa_IR.postalcodePlus4(f)
   of "ja_JP": address_ja_JP.postalcodePlus4(f)
@@ -160,6 +199,7 @@ proc postcode*(f: Faker): string =
     echo f.postcode()
 
   case f.locale
+  of "en_GH": address_en_GH.postcode(f)
   of "en_US": address_en_US.postcode(f)
   of "fa_IR": address_fa_IR.postcode(f)
   of "ja_JP": address_ja_JP.postcode(f)
@@ -172,6 +212,7 @@ proc secondaryAddress*(f: Faker): string =
     echo f.secondaryAddress()
 
   case f.locale
+  of "en_GH": address_en_GH.secondaryAddress(f)
   of "en_US": address_en_US.secondaryAddress(f)
   of "fa_IR": address_fa_IR.secondaryAddress(f)
   of "ja_JP": address_ja_JP.secondaryAddress(f)
@@ -184,10 +225,24 @@ proc state*(f: Faker): string =
     echo f.state()
 
   case f.locale
+  of "en_GH": address_en_GH.state(f)
   of "en_US": address_en_US.state(f)
   of "fa_IR": address_fa_IR.state(f)
   of "ja_JP": address_ja_JP.state(f)
   else: address_en_US.state(f)
+
+proc stateAbbr*(f: Faker, includeTerritories: bool): string =
+  ## Generates random stateAbbr.
+  runnableExamples:
+    let f = newFaker()
+    echo f.stateAbbr(includeTerritories: bool)
+
+  case f.locale
+  of "en_GH": address_en_GH.stateAbbr(f, includeTerritories)
+  of "en_US": address_en_US.stateAbbr(f, includeTerritories)
+  of "fa_IR": address_fa_IR.stateAbbr(f, includeTerritories)
+  of "ja_JP": address_ja_JP.stateAbbr(f, includeTerritories)
+  else: address_en_US.stateAbbr(f, includeTerritories)
 
 proc streetAddress*(f: Faker): string =
   ## Generates random streetAddress.
@@ -196,6 +251,7 @@ proc streetAddress*(f: Faker): string =
     echo f.streetAddress()
 
   case f.locale
+  of "en_GH": address_en_GH.streetAddress(f)
   of "en_US": address_en_US.streetAddress(f)
   of "fa_IR": address_fa_IR.streetAddress(f)
   of "ja_JP": address_ja_JP.streetAddress(f)
@@ -208,6 +264,7 @@ proc streetName*(f: Faker): string =
     echo f.streetName()
 
   case f.locale
+  of "en_GH": address_en_GH.streetName(f)
   of "en_US": address_en_US.streetName(f)
   of "fa_IR": address_fa_IR.streetName(f)
   of "ja_JP": address_ja_JP.streetName(f)
@@ -220,6 +277,7 @@ proc streetSuffix*(f: Faker): string =
     echo f.streetSuffix()
 
   case f.locale
+  of "en_GH": address_en_GH.streetSuffix(f)
   of "en_US": address_en_US.streetSuffix(f)
   of "fa_IR": address_fa_IR.streetSuffix(f)
   of "ja_JP": address_ja_JP.streetSuffix(f)
@@ -232,10 +290,24 @@ proc zipcode*(f: Faker): string =
     echo f.zipcode()
 
   case f.locale
+  of "en_GH": address_en_GH.zipcode(f)
   of "en_US": address_en_US.zipcode(f)
   of "fa_IR": address_fa_IR.zipcode(f)
   of "ja_JP": address_ja_JP.zipcode(f)
   else: address_en_US.zipcode(f)
+
+proc zipcodeInState*(f: Faker, stateAbbr: string): string =
+  ## Generates random zipcodeInState.
+  runnableExamples:
+    let f = newFaker()
+    echo f.zipcodeInState(stateAbbr: string)
+
+  case f.locale
+  of "en_GH": address_en_GH.zipcodeInState(f, stateAbbr)
+  of "en_US": address_en_US.zipcodeInState(f, stateAbbr)
+  of "fa_IR": address_fa_IR.zipcodeInState(f, stateAbbr)
+  of "ja_JP": address_ja_JP.zipcodeInState(f, stateAbbr)
+  else: address_en_US.zipcodeInState(f, stateAbbr)
 
 proc zipcodePlus4*(f: Faker): string =
   ## Generates random zipcodePlus4.
@@ -244,6 +316,7 @@ proc zipcodePlus4*(f: Faker): string =
     echo f.zipcodePlus4()
 
   case f.locale
+  of "en_GH": address_en_GH.zipcodePlus4(f)
   of "en_US": address_en_US.zipcodePlus4(f)
   of "fa_IR": address_fa_IR.zipcodePlus4(f)
   of "ja_JP": address_ja_JP.zipcodePlus4(f)

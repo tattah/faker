@@ -4,6 +4,7 @@
 # ----------------------------------------------- #
 
 import ../base
+import company/company_en_GH
 import company/company_en_US
 import company/company_ja_JP
 export base
@@ -15,6 +16,7 @@ proc bs*(f: Faker): string =
     echo f.bs()
 
   case f.locale
+  of "en_GH": company_en_GH.bs(f)
   of "en_US": company_en_US.bs(f)
   of "ja_JP": company_ja_JP.bs(f)
   else: company_en_US.bs(f)
@@ -26,6 +28,7 @@ proc catchPhrase*(f: Faker): string =
     echo f.catchPhrase()
 
   case f.locale
+  of "en_GH": company_en_GH.catchPhrase(f)
   of "en_US": company_en_US.catchPhrase(f)
   of "ja_JP": company_ja_JP.catchPhrase(f)
   else: company_en_US.catchPhrase(f)
@@ -37,6 +40,7 @@ proc company*(f: Faker): string =
     echo f.company()
 
   case f.locale
+  of "en_GH": company_en_GH.company(f)
   of "en_US": company_en_US.company(f)
   of "ja_JP": company_ja_JP.company(f)
   else: company_en_US.company(f)
@@ -48,6 +52,7 @@ proc companySuffix*(f: Faker): string =
     echo f.companySuffix()
 
   case f.locale
+  of "en_GH": company_en_GH.companySuffix(f)
   of "en_US": company_en_US.companySuffix(f)
   of "ja_JP": company_ja_JP.companySuffix(f)
   else: company_en_US.companySuffix(f)
